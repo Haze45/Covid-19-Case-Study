@@ -1,0 +1,73 @@
+🗂️ Project Overview
+This project performs exploratory data analysis (EDA) and visualization on COVID-19 datasets, focusing on infection trends, deaths, recoveries, and rates across countries and provinces. The analysis is divided across two Jupyter Notebooks:
+
+* Covid19.ipynb – Core data cleaning, transformation, and preliminary analyses.
+
+* Covid19_7.ipynb – Advanced metrics,Data Merging,Combined Data Analysis, comparisons, and visualizations.
+
+📁 Notebooks
+✅ 1. Covid19.ipynb – Data Preparation and Initial Insights
+Contents:
+* Data Loading: Reads confirmed, deaths, and recovered datasets.
+
+* Data Cleaning:
+    ->Replaces blank values in the Province/State column with "All Provinces".
+    ->Removes the first row if it's metadata or unnecessary.
+    ->Handles missing values using forward fill for time-series integrity.
+
+*Data Transformation:
+    ->Converts wide-format data to long-format using pd.melt().
+    ->Ensures date columns are converted to datetime objects.
+
+*Trend Analysis:
+    ->Peak daily new cases in Germany, France, and Italy.
+    ->Visualization of the peaks using bar graphs.
+
+✅ 2. Covid19_7.ipynb – Deeper Analysis and Comparisons
+Contents:
+*Recovery Rate Analysis:
+    ->Calculates and compares recovery rates between Canada and Australia as of December 31, 2020.
+    ->Visualizes the comparison using bar plots.
+
+*Death Rate Analysis in Canada:
+    ->Computes death rates per province.
+    ->Identifies the highest and lowest death rate provinces.
+    ->Handles divisions by zero (e.g., Diamond Princess).
+    ->Bar chart visualization.
+
+*Total Deaths and Daily Averages:
+    ->Computes total deaths per country as of the latest date.
+    ->Calculates average daily deaths and ranks the top 5 countries.
+    ->Visual representation using bar charts.
+
+*United States Time Series: 
+    ->Analyzes and visualizes how cumulative deaths evolved over time in the US.
+
+📊 Datasets Used
+Three CSV files:
+*covid_19_confirmed_v1_lyst*.csv
+*covid_19_deaths_v1_lyst*.csv
+*covid_19_recovered_v1_lyst*.csv
+
+📌 Key Insights
+*Germany experienced the highest single-day surge among Germany, France, and Italy.
+*Canada had a higher recovery rate than Australia by end of 2020.
+*Provinces in Canada had varying death rates, with some special cases (e.g., cruise ships).
+*The US showed a consistent increase in total deaths, with visual trends available over time.
+*The top countries by average daily deaths provide insight into the global severity.
+
+🛠️ Tools & Libraries
+*Pandas for data manipulation
+*Matplotlib and Seaborn for visualization
+*NumPy for numerical operations
+*Jupyter Notebooks for interactive analysis
+
+📁 Project Structure
+COVID19-Data-Analysis/
+├── Covid19.ipynb             # Initial data cleaning and EDA
+├── Covid19_7.ipynb           # Advanced analysis and plotting
+├── data/
+│   ├── covid_19_confirmed_*.csv
+│   ├── covid_19_deaths_*.csv
+│   └── covid_19_recovered_*.csv
+└── README.md                 # Project documentation
